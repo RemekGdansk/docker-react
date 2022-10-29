@@ -3,19 +3,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
-    image: remekgdansk/frontend-web
+      dockerfile: Dockerfile
     ports:
-      - 3000:3000
-    volumes:
-      - /home/node/app/node_modules
-      - .:/home/node/app
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    image: remekgdansk/frontend-web
-    volumes:
-      - /home/node/app/node_modules
-      - .:/home/node/app
-    command: ["npm", "run", "test"]
+      - '80:80'
